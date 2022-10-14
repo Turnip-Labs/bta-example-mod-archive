@@ -9,6 +9,7 @@ import java.util.Random;
 public class ExampleCustomItem extends Item {
 
     private Random rand;
+
     public ExampleCustomItem(int i) {
         super(i);
         this.rand = new Random();
@@ -27,7 +28,7 @@ public class ExampleCustomItem extends Item {
 
             // Check if block is not air
             if (block.blockID > 0) {
-                mc.theWorld.setBlock(x, y, z,0);
+                mc.theWorld.setBlock(x, y, z, 0);
                 mc.theWorld.markBlockNeedsUpdate(x, y, z);
 
                 for (int i = 0; i < 5; i++) {
