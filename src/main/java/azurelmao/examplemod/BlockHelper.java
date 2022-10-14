@@ -1,15 +1,11 @@
 package azurelmao.examplemod;
 
 import azurelmao.examplemod.mixin.ExampleInvoker;
-import net.minecraft.src.Block;
-import net.minecraft.src.Item;
-import net.minecraft.src.ItemBlock;
-import net.minecraft.src.Material;
-import net.minecraft.src.StepSound;
+import net.minecraft.src.*;
 
 public class BlockHelper {
 
-    public static Block createBlock(int id, String name, Material material, StepSound stepSound, int x, int y,  float hardness, float resistance,float lightValue) {
+    public static Block createBlock(int id, String name, int x, int y, Material material, StepSound stepSound, float hardness, float resistance, float lightValue) {
         Block block = new Block(id, material);
         block.setTexCoords(x, y);
         block.setBlockName(name);

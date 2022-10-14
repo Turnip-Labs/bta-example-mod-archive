@@ -4,6 +4,7 @@
     "package": "azurelmao.examplemod.mixin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
+        "BlockFluidStillMixin",
         "ExampleAccessor",
         "ExampleInvoker",
         "ExampleMixin"

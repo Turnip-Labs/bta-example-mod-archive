@@ -34,5 +34,5 @@ git clone https://github.com/azurelmao/bta-babric-example-mod.git
 ## Screenshots
 Small sneakpeak of what the mod has in store.
 ![sneakpeak](github/sneakpeak.png)
-Hm, I wonder where this fire came from?
+Hm, I wonder where did this fire come from?
 ![fire](github/fire.png)

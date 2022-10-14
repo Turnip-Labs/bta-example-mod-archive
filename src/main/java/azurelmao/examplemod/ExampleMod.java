@@ -1,5 +1,6 @@
 package azurelmao.examplemod;
 
+import azurelmao.examplemod.mixin.ExampleInvoker;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.src.*;
 import org.slf4j.Logger;
@@ -47,7 +48,13 @@ public class ExampleMod implements ModInitializer {
     public static final Item exampleBoots = new ItemArmor(147, ExampleArmorMaterial.exampleArmorMaterial, 3).setIconCoord(7, 14).setItemName(name("armor.example.boots"));
 
     // Blocks
-    public static final Block exampleBlock = BlockHelper.createBlock(900, name("example.block"), Material.ground, Block.soundSandFootstep, 31, 0, 0.1f, 0.1f, 0.0f);
+    public static final Block exampleBlock = BlockHelper.createBlock(900, name("example.block"), 31, 0, Material.ground, Block.soundSandFootstep, 0.1f, 0.1f, 0.0f);
+    public static final Block examplePortalBlock = new ExamplePortalBlock(901, 2, Block.glowstone.blockID, Block.fluidWaterStill.blockID).setBlockName("portal.test").setTexCoords(13, 12).setNotInCreativeMenu();
+    static {
+        ((ExampleInvoker) examplePortalBlock).callSetHardness(-1.0f);
+        ((ExampleInvoker) examplePortalBlock).callSetStepSound(Block.soundGlassFootstep);
+        ((ExampleInvoker) examplePortalBlock).callSetLightValue(0.75f);
+    }
 
 
     @Override
