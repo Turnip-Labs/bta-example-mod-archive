@@ -30,3 +30,9 @@ git clone https://github.com/azurelmao/bta-babric-example-mod.git
 
 
 6. Done! Now all that's left is to change every mention of `examplemod` to your own mod id. Happy modding!
+
+## Screenshots
+Small sneakpeak of what the mod has in store.
+![sneakpeak](github/sneakpeak.png)
+Hm, I wonder where this fire came from?
+![fire](github/fire.png)
