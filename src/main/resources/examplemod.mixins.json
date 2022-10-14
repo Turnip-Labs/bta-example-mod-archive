@@ -1,0 +1,16 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "azurelmao.examplemod.mixin",
+    "compatibilityLevel": "JAVA_8",
+    "mixins": [
+        "ExampleAccessor",
+        "ExampleInvoker",
+        "ExampleMixin"
+    ],
+    "client": [
+    ],
+    "injectors": {
+        "defaultRequire": 1
+  }
+}
