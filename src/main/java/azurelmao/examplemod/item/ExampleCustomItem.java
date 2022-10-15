@@ -1,4 +1,4 @@
-package azurelmao.examplemod;
+package azurelmao.examplemod.item;
 
 import azurelmao.examplemod.mixin.ExampleAccessor;
 import net.minecraft.client.Minecraft;
@@ -13,6 +13,10 @@ public class ExampleCustomItem extends Item {
     public ExampleCustomItem(int i) {
         super(i);
         this.rand = new Random();
+    }
+
+    public boolean isFull3D() {
+        return true;
     }
 
     @Override

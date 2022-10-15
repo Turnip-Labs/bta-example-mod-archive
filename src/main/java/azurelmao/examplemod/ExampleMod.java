@@ -1,5 +1,8 @@
 package azurelmao.examplemod;
 
+import azurelmao.examplemod.item.ExampleArmorMaterial;
+import azurelmao.examplemod.item.ExampleCustomItem;
+import azurelmao.examplemod.item.ExampleToolMaterial;
 import azurelmao.examplemod.mixin.ExampleInvoker;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.src.*;

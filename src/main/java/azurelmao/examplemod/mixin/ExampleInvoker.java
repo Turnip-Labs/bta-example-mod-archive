@@ -8,6 +8,8 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 @Mixin(value = Block.class, remap = false)
 public interface ExampleInvoker {
 
+    // Invokers are used to call methods which have protected or private access
+
     @Invoker("setHardness")
     Block callSetHardness(float f); // name of method MUST NOT be the same as the method that's being invoked
 

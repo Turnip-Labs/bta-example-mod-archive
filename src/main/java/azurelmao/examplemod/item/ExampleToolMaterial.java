@@ -1,4 +1,4 @@
-package azurelmao.examplemod;
+package azurelmao.examplemod.item;
 
 import net.minecraft.src.material.ToolMaterial;
 
