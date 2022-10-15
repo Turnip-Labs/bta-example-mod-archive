@@ -3,6 +3,7 @@ package azurelmao.examplemod;
 import azurelmao.examplemod.item.ExampleArmorMaterial;
 import azurelmao.examplemod.item.ExampleCustomItem;
 import azurelmao.examplemod.item.ExampleToolMaterial;
+import azurelmao.examplemod.mixin.CraftingManagerInvoker;
 import azurelmao.examplemod.mixin.ExampleInvoker;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.src.*;
@@ -59,9 +60,12 @@ public class ExampleMod implements ModInitializer {
         ((ExampleInvoker) examplePortalBlock).callSetLightValue(0.75f);
     }
 
-
     @Override
     public void onInitialize() {
         LOGGER.info("ExampleMod initialized.");
+
+        // Recipes
+        RecipeHelper.createRecipe(exampleCustomItem, 1, new Object[]{"#A", "B#", 'A', Item.nethercoal, 'B', Item.stick});
+        RecipeHelper.createShapelessRecipe(exampleItem, 4, new Object[]{new ItemStack(Item.dustGlowstone, 1), new ItemStack(Item.dustRedstone, 1), new ItemStack(Item.dustSugar, 1), new ItemStack(Item.sulphur, 1)});
     }
 }

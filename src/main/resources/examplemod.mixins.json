@@ -5,6 +5,7 @@
     "compatibilityLevel": "JAVA_8",
     "mixins": [
         "BlockFluidStillMixin",
+        "CraftingManagerInvoker",
         "ExampleAccessor",
         "ExampleInvoker",
         "ExampleMixin",
