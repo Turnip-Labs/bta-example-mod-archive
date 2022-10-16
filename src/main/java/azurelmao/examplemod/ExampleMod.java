@@ -3,11 +3,14 @@ package azurelmao.examplemod;
 import azurelmao.examplemod.item.ExampleArmorMaterial;
 import azurelmao.examplemod.item.ExampleCustomItem;
 import azurelmao.examplemod.item.ExampleToolMaterial;
+import azurelmao.examplemod.mixin.DimensionInterface;
 import azurelmao.examplemod.mixin.ExampleInvoker;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.src.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Arrays;
 
 
 public class ExampleMod implements ModInitializer {
@@ -52,12 +55,15 @@ public class ExampleMod implements ModInitializer {
 
     // Blocks
     public static final Block exampleBlock = BlockHelper.createBlock(900, name("example.block"), 31, 0, Material.ground, Block.soundSandFootstep, 0.1f, 0.1f, 0.0f);
-    public static final Block examplePortalBlock = new ExamplePortalBlock(901, 2, Block.glowstone.blockID, Block.fluidWaterStill.blockID).setBlockName("example.portal").setTexCoords(13, 12).setNotInCreativeMenu();
+    public static final Block examplePortalBlock = new ExamplePortalBlock(901, 3, Block.glowstone.blockID, Block.fluidWaterStill.blockID).setBlockName("example.portal").setTexCoords(13, 12).setNotInCreativeMenu();
     static {
         ((ExampleInvoker) examplePortalBlock).callSetHardness(-1.0f);
         ((ExampleInvoker) examplePortalBlock).callSetStepSound(Block.soundGlassFootstep);
         ((ExampleInvoker) examplePortalBlock).callSetLightValue(0.75f);
     }
+
+    // Dimension
+    public static final Dimension exampleDimension = DimensionHelper.createDimension(3, "exampleDimension", Dimension.overworld, 1.0f, examplePortalBlock, WorldType.overworldRetro, 0, 128);
 
     @Override
     public void onInitialize() {

@@ -101,7 +101,7 @@ public class RecipeHelper {
             Map recipes = smeltingManager.getSmeltingList();
 
             if (recipes.containsKey(inputItem)) {
-                ExampleMod.LOGGER.info("Couldn't find smelting recipe with output: " + inputItem.getItemName());
+                ExampleMod.LOGGER.info("Couldn't find smelting recipe with input: " + inputItem.getItemName());
                 return;
             }
 
@@ -113,7 +113,7 @@ public class RecipeHelper {
             Map recipes = smeltingManager.getSmeltingList();
 
             if (recipes.containsKey(inputItem)) {
-                ExampleMod.LOGGER.info("Couldn't find smelting recipe with output: " + inputItem.getBlockName(0));
+                ExampleMod.LOGGER.info("Couldn't find smelting recipe with input: " + inputItem.getBlockName(0));
                 return;
             }
 
@@ -143,7 +143,7 @@ public class RecipeHelper {
             Map recipes = blastingManager.getSmeltingList();
 
             if (recipes.containsKey(inputItem)) {
-                ExampleMod.LOGGER.info("Couldn't find blasting recipe with output: " + inputItem.getItemName());
+                ExampleMod.LOGGER.info("Couldn't find blasting recipe with input: " + inputItem.getItemName());
                 return;
             }
 
@@ -155,7 +155,7 @@ public class RecipeHelper {
             Map recipes = blastingManager.getSmeltingList();
 
             if (recipes.containsKey(inputItem)) {
-                ExampleMod.LOGGER.info("Couldn't find blasting recipe with output: " + inputItem.getBlockName(0));
+                ExampleMod.LOGGER.info("Couldn't find blasting recipe with input: " + inputItem.getBlockName(0));
                 return;
             }
 

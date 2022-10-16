@@ -1468,3 +1468,5 @@ tile.examplemod.example.block.desc=An example block.
 tile.examplemod.example.portal.name=Example Portal
 tile.examplemod.example.portal.desc=An example portal.
 
+dimension.exampleDimension.name=the Exampleworld
+
