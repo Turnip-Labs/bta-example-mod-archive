@@ -1465,3 +1465,6 @@ item.examplemod.armor.example.boots.desc=A pair of example boots.
 tile.examplemod.example.block.name=Example Block
 tile.examplemod.example.block.desc=An example block.
 
+tile.examplemod.example.portal.name=Example Portal
+tile.examplemod.example.portal.desc=An example portal.
+

@@ -3,12 +3,14 @@ package azurelmao.examplemod;
 import azurelmao.examplemod.item.ExampleArmorMaterial;
 import azurelmao.examplemod.item.ExampleCustomItem;
 import azurelmao.examplemod.item.ExampleToolMaterial;
-import azurelmao.examplemod.mixin.CraftingManagerInvoker;
+import azurelmao.examplemod.mixin.CraftingManagerInterface;
 import azurelmao.examplemod.mixin.ExampleInvoker;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.src.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 
 public class ExampleMod implements ModInitializer {
@@ -53,7 +55,7 @@ public class ExampleMod implements ModInitializer {
 
     // Blocks
     public static final Block exampleBlock = BlockHelper.createBlock(900, name("example.block"), 31, 0, Material.ground, Block.soundSandFootstep, 0.1f, 0.1f, 0.0f);
-    public static final Block examplePortalBlock = new ExamplePortalBlock(901, 2, Block.glowstone.blockID, Block.fluidWaterStill.blockID).setBlockName("portal.test").setTexCoords(13, 12).setNotInCreativeMenu();
+    public static final Block examplePortalBlock = new ExamplePortalBlock(901, 2, Block.glowstone.blockID, Block.fluidWaterStill.blockID).setBlockName("example.portal").setTexCoords(13, 12).setNotInCreativeMenu();
     static {
         ((ExampleInvoker) examplePortalBlock).callSetHardness(-1.0f);
         ((ExampleInvoker) examplePortalBlock).callSetStepSound(Block.soundGlassFootstep);
@@ -65,7 +67,10 @@ public class ExampleMod implements ModInitializer {
         LOGGER.info("ExampleMod initialized.");
 
         // Recipes
-        RecipeHelper.createRecipe(exampleCustomItem, 1, new Object[]{"#A", "B#", 'A', Item.nethercoal, 'B', Item.stick});
-        RecipeHelper.createShapelessRecipe(exampleItem, 4, new Object[]{new ItemStack(Item.dustGlowstone, 1), new ItemStack(Item.dustRedstone, 1), new ItemStack(Item.dustSugar, 1), new ItemStack(Item.sulphur, 1)});
+        RecipeHelper.Crafting.removeRecipe(Item.bed);
+        RecipeHelper.Crafting.createRecipe(exampleCustomItem, 1, new Object[]{"#A", "B#", 'A', Item.nethercoal, 'B', Item.stick});
+        RecipeHelper.Crafting.createShapelessRecipe(exampleItem, 4, new Object[]{new ItemStack(Item.dustGlowstone, 1), new ItemStack(Item.dustRedstone, 1), new ItemStack(Item.dustSugar, 1), new ItemStack(Item.sulphur, 1)});
+
+        RecipeHelper.Smelting.createRecipe(exampleFood, exampleItem);
     }
 }
