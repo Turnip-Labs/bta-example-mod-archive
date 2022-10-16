@@ -1,7 +1,8 @@
 package azurelmao.examplemod;
 
-import azurelmao.examplemod.mixin.CraftingManagerInterface;
-import azurelmao.examplemod.mixin.RecipesFurnaceInterface;
+import azurelmao.examplemod.mixin.recipe.CraftingManagerInterface;
+import azurelmao.examplemod.mixin.recipe.RecipesBlastFurnaceInterface;
+import azurelmao.examplemod.mixin.recipe.RecipesFurnaceInterface;
 import net.minecraft.src.*;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.Map;
 public class RecipeHelper {
     public static final CraftingManager craftingManager = CraftingManager.getInstance();
     public static final RecipesFurnace smeltingManager = RecipesFurnace.smelting();
+    public static final RecipesBlastFurnace blastingManager = RecipesBlastFurnace.smelting();
 
     public static class Crafting {
 
@@ -117,6 +119,48 @@ public class RecipeHelper {
 
             recipes.remove(inputItem);
             ((RecipesFurnaceInterface) smeltingManager).setSmeltingList(recipes);
+        }
+    }
+
+    public static class Blasting {
+        public static void createRecipe(Item outputItem, Item inputItem) {
+            blastingManager.addSmelting(inputItem.itemID, new ItemStack(outputItem));
+        }
+
+        public static void createRecipe(Item outputItem, Block inputItem) {
+            blastingManager.addSmelting(inputItem.blockID, new ItemStack(outputItem));
+        }
+
+        public static void createRecipe(Block outputItem, Item inputItem) {
+            blastingManager.addSmelting(inputItem.itemID, new ItemStack(outputItem));
+        }
+
+        public static void createRecipe(Block outputItem, Block inputItem) {
+            blastingManager.addSmelting(inputItem.blockID, new ItemStack(outputItem));
+        }
+
+        public static void removeRecipe(Item inputItem) {
+            Map recipes = blastingManager.getSmeltingList();
+
+            if (recipes.containsKey(inputItem)) {
+                ExampleMod.LOGGER.info("Couldn't find blasting recipe with output: " + inputItem.getItemName());
+                return;
+            }
+
+            recipes.remove(inputItem);
+            ((RecipesBlastFurnaceInterface) blastingManager).setSmeltingList(recipes);
+        }
+
+        public static void removeRecipe(Block inputItem) {
+            Map recipes = blastingManager.getSmeltingList();
+
+            if (recipes.containsKey(inputItem)) {
+                ExampleMod.LOGGER.info("Couldn't find blasting recipe with output: " + inputItem.getBlockName(0));
+                return;
+            }
+
+            recipes.remove(inputItem);
+            ((RecipesBlastFurnaceInterface) blastingManager).setSmeltingList(recipes);
         }
     }
 

@@ -1,4 +1,4 @@
-package azurelmao.examplemod.mixin;
+package azurelmao.examplemod.mixin.recipe;
 
 import net.minecraft.src.CraftingManager;
 import net.minecraft.src.ItemStack;

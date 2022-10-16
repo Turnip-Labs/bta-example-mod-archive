@@ -3,14 +3,11 @@ package azurelmao.examplemod;
 import azurelmao.examplemod.item.ExampleArmorMaterial;
 import azurelmao.examplemod.item.ExampleCustomItem;
 import azurelmao.examplemod.item.ExampleToolMaterial;
-import azurelmao.examplemod.mixin.CraftingManagerInterface;
 import azurelmao.examplemod.mixin.ExampleInvoker;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.src.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.List;
 
 
 public class ExampleMod implements ModInitializer {
@@ -72,5 +69,6 @@ public class ExampleMod implements ModInitializer {
         RecipeHelper.Crafting.createShapelessRecipe(exampleItem, 4, new Object[]{new ItemStack(Item.dustGlowstone, 1), new ItemStack(Item.dustRedstone, 1), new ItemStack(Item.dustSugar, 1), new ItemStack(Item.sulphur, 1)});
 
         RecipeHelper.Smelting.createRecipe(exampleFood, exampleItem);
+        RecipeHelper.Blasting.createRecipe(Block.bedrock, Block.blockClay);
     }
 }

@@ -5,12 +5,13 @@
     "compatibilityLevel": "JAVA_8",
     "mixins": [
         "BlockFluidStillMixin",
-        "CraftingManagerInterface",
         "ExampleAccessor",
         "ExampleInvoker",
         "ExampleMixin",
-        "RecipesFurnaceInterface",
-        "RenderPlayerMixin"
+        "RenderPlayerMixin",
+        "recipe.CraftingManagerInterface",
+        "recipe.RecipesBlastFurnaceInterface",
+        "recipe.RecipesFurnaceInterface"
     ],
     "client": [
     ],
