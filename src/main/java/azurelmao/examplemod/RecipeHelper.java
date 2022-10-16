@@ -45,7 +45,7 @@ public class RecipeHelper {
             }
 
             if (theRecipe == null) {
-                ExampleMod.LOGGER.info("Couldn't find recipe with output item: " + outputItem.getItemName());
+                ExampleMod.LOGGER.info("Couldn't find recipe with output: " + outputItem.getItemName());
                 return;
             }
 
