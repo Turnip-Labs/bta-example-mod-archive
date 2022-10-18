@@ -2,8 +2,8 @@
 
 A babric mod for BTA with examples of: 
 - items, tools, food items, custom items and armor
-- blocks, portals and dimension
-- trees
+- blocks, portals and dimensions
+- trees (giant mushrooms)
 - recipes, mixins, invokers and accessors
 Future plans include entities and custom worldgen.
 
