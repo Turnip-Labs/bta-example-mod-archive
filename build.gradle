@@ -37,7 +37,7 @@ dependencies {
     minecraft "bta-download-repo:bta:${project.bta_version}"
     mappings loom.layered() {}
 
-    modImplementation files("libs/minecraft-client-base.jar") // only used to fix the Client run configuration
+    modRuntimeOnly files("libs/minecraft-client-base.jar") // only used to fix the Client run configuration
     modImplementation "babric:fabric-loader:${project.loader_version}"
 
     modImplementation "org.slf4j:slf4j-api:1.8.0-beta4"

@@ -1470,3 +1470,9 @@ tile.examplemod.example.portal.desc=An example portal.
 
 dimension.exampleDimension.name=the Exampleworld
 
+tile.examplemod.mushroom.cap.red.name=Red Mushroom Cap
+tile.examplemod.mushroom.cap.red.desc=A solid block of fungi.
+tile.examplemod.mushroom.stem.name=Mushroom Stem
+tile.examplemod.mushroom.stem.desc=A solid block of fungi.
+
+

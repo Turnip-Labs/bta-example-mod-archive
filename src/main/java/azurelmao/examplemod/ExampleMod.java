@@ -3,14 +3,11 @@ package azurelmao.examplemod;
 import azurelmao.examplemod.item.ExampleArmorMaterial;
 import azurelmao.examplemod.item.ExampleCustomItem;
 import azurelmao.examplemod.item.ExampleToolMaterial;
-import azurelmao.examplemod.mixin.DimensionInterface;
 import azurelmao.examplemod.mixin.ExampleInvoker;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.src.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Arrays;
 
 
 public class ExampleMod implements ModInitializer {
@@ -55,6 +52,9 @@ public class ExampleMod implements ModInitializer {
 
     // Blocks
     public static final Block exampleBlock = BlockHelper.createBlock(900, name("example.block"), 31, 0, Material.ground, Block.soundSandFootstep, 0.1f, 0.1f, 0.0f);
+    public static final Block redMushroomCap = BlockHelper.createBlock(902, name("mushroom.cap.red"), 31, 1,  Material.cloth, Block.soundClothFootstep, 0.1f, 0.1f, 0.0f);
+    public static final Block brownMushroomCap = BlockHelper.createBlock(903, name("mushroom.cap.brown"), 31, 2,  Material.cloth, Block.soundClothFootstep, 0.1f, 0.1f, 0.0f);
+    public static final Block mushroomStem = BlockHelper.createBlock(904, name("mushroom.stem"), 31, 4, 31, 4, 31, 3, Material.cloth, Block.soundClothFootstep, 0.1f, 0.1f, 0.0f);
     public static final Block examplePortalBlock = new ExamplePortalBlock(901, 3, Block.glowstone.blockID, Block.fluidWaterStill.blockID).setBlockName("example.portal").setTexCoords(13, 12).setNotInCreativeMenu();
     static {
         ((ExampleInvoker) examplePortalBlock).callSetHardness(-1.0f);

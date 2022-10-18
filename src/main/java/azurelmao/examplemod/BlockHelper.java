@@ -19,4 +19,19 @@ public class BlockHelper {
 
         return block;
     }
+
+    public static Block createBlock(int id, String name, int topX, int topY, int bottomX, int bottomY, int sidesX, int sidesY, Material material, StepSound stepSound, float hardness, float resistance, float lightValue) {
+        Block block = new Block(id, material);
+        block.setTexCoords(topX, topY, bottomX, bottomY, sidesX, sidesY);
+        block.setBlockName(name);
+
+        ((ExampleInvoker) block).callSetHardness(hardness);
+        ((ExampleInvoker) block).callSetResistance(resistance);
+        ((ExampleInvoker) block).callSetStepSound(stepSound);
+        ((ExampleInvoker) block).callSetLightValue(lightValue);
+
+        Item.itemsList[block.blockID] = new ItemBlock(block.blockID - Block.blocksList.length);
+
+        return block;
+    }
 }
