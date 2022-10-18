@@ -1,7 +1,11 @@
 # BTA Babric Example Mod
 
-A babric mod for BTA with examples for items, blocks, armor, recipes, mixins, invokers and accessers.  
-Future plans include entities and dimensions.
+A babric mod for BTA with examples of: 
+- items, tools, food items, custom items and armor
+- blocks, portals and dimension
+- trees
+- recipes, mixins, invokers and accessors
+Future plans include entities and custom worldgen.
 
 ## Prerequisites
 - JDK for Java 17 ([Eclipse Temurin](https://adoptium.net/temurin/releases/) recommended)
