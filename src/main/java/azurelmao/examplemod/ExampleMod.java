@@ -1,5 +1,6 @@
 package azurelmao.examplemod;
 
+import azurelmao.examplemod.block.ExamplePortalBlock;
 import azurelmao.examplemod.item.ExampleArmorMaterial;
 import azurelmao.examplemod.item.ExampleCustomItem;
 import azurelmao.examplemod.item.ExampleToolMaterial;
@@ -63,7 +64,7 @@ public class ExampleMod implements ModInitializer {
     }
 
     // Dimension
-    public static final Dimension exampleDimension = DimensionHelper.createDimension(3, "exampleDimension", Dimension.overworld, 1.0f, examplePortalBlock, WorldType.overworldRetro, 0, 128);
+    public static final Dimension exampleDimension = DimensionHelper.createDimension(3, "exampleworld", Dimension.overworld, 1.0f, examplePortalBlock, WorldType.overworldRetro, 0, 128);
 
     @Override
     public void onInitialize() {

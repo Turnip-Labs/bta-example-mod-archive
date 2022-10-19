@@ -32,8 +32,7 @@ public class ExampleCustomItem extends Item {
 
             // Check if block is not air
             if (block.blockID > 0) {
-                mc.theWorld.setBlock(x, y, z, 0);
-                mc.theWorld.markBlockNeedsUpdate(x, y, z);
+                mc.theWorld.setBlockWithNotify(x, y, z, 0);
 
                 for (int i = 0; i < 5; i++) {
 

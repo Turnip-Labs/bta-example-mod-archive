@@ -7,6 +7,7 @@
         "BlockFluidStillMixin",
         "ChunkProviderRetroMixin",
         "DimensionInterface",
+        "EntityLivingMixin",
         "ExampleAccessor",
         "ExampleInvoker",
         "ExampleMixin",

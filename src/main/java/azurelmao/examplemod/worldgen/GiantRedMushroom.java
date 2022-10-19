@@ -1,5 +1,6 @@
-package azurelmao.examplemod;
+package azurelmao.examplemod.worldgen;
 
+import azurelmao.examplemod.ExampleMod;
 import net.minecraft.shared.Minecraft;
 import net.minecraft.src.Block;
 import net.minecraft.src.BlockGrass;
@@ -8,13 +9,13 @@ import net.minecraft.src.WorldGenerator;
 
 import java.util.Random;
 
-public class GiantBrownMushroom extends WorldGenerator {
+public class GiantRedMushroom extends WorldGenerator {
     public final int capId;
     public final int stemId;
     public final int heightMod;
 
-    public GiantBrownMushroom() {
-        this.capId = ExampleMod.brownMushroomCap.blockID;
+    public GiantRedMushroom() {
+        this.capId = ExampleMod.redMushroomCap.blockID;
         this.stemId = ExampleMod.mushroomStem.blockID;
         this.heightMod = 4;
     }
@@ -27,15 +28,15 @@ public class GiantBrownMushroom extends WorldGenerator {
             int searchWidth;
 
             // Check if there is enough space for the tree
-            for(int y = originY; y <= originY + 1 + height; ++y) {
-                searchWidth = 2;
+            for(int y = originY; y <= originY + height + 1; ++y) {
+                searchWidth = 1;
 
                 if (y == originY) {
                     searchWidth = 0;
                 }
 
-                if (y == height) {
-                    searchWidth = 4;
+                if (y >= originY + height - 3) {
+                    searchWidth = 2;
                 }
 
                 for(int x = originX - searchWidth ; x <= originX + searchWidth && flag; ++x) {
@@ -58,15 +59,45 @@ public class GiantBrownMushroom extends WorldGenerator {
                 return false;
             } else {
                 int blockBelowId = world.getBlockId(originX, originY - 1, originZ);
+                // Can only spawn on grass or dirt
                 if ((Block.blocksList[blockBelowId] instanceof BlockGrass || blockBelowId == Block.dirt.blockID) && originY < Minecraft.WORLD_HEIGHT_BLOCKS - height - 1) {
                     world.setBlockWithNotify(originX, originY - 1, originZ, Block.dirt.blockID);
 
-                    int mushroomWidth = 4;
+                    int mushroomWidth = 2;
+
+                    for (int y = height - 3; y < height; ++y) {
+
+                        for (int x = -mushroomWidth + 1; x < mushroomWidth; ++x) {
+
+                            // South part
+                            if (!Block.opaqueCubeLookup[world.getBlockId(originX + x, originY + y, originZ + mushroomWidth)]) {
+                                world.setBlockWithNotify(originX + x, originY + y, originZ + mushroomWidth, capId);
+                            }
+
+                            // North part
+                            if (!Block.opaqueCubeLookup[world.getBlockId(originX + x, originY + y, originZ - mushroomWidth)]) {
+                                world.setBlockWithNotify(originX + x, originY + y, originZ - mushroomWidth, capId);
+                            }
+                        }
+
+                        for (int z = -mushroomWidth + 1; z < mushroomWidth; ++z) {
+
+                            // East part
+                            if (!Block.opaqueCubeLookup[world.getBlockId(originX + mushroomWidth, originY + y, originZ + z)]) {
+                                world.setBlockWithNotify(originX + mushroomWidth, originY + y, originZ + z, capId);
+                            }
+
+                            // West part
+                            if (!Block.opaqueCubeLookup[world.getBlockId(originX - mushroomWidth, originY + y, originZ + z)]) {
+                                world.setBlockWithNotify(originX - mushroomWidth, originY + y, originZ + z, capId);
+                            }
+                        }
+                    }
 
                     // Top part
                     for (int x = -mushroomWidth + 1; x < mushroomWidth; ++x) {
                         for (int z = -mushroomWidth + 1; z < mushroomWidth; ++z) {
-                            if (!(Math.abs(x) == mushroomWidth - 1 && Math.abs(z) == mushroomWidth - 1) && !Block.opaqueCubeLookup[world.getBlockId(originX + x, originY + height, originZ + z)]) {
+                            if (!Block.opaqueCubeLookup[world.getBlockId(originX + x, originY + height, originZ + z)]) {
                                 world.setBlockWithNotify(originX + x, originY + height, originZ + z, capId);
                             }
                         }

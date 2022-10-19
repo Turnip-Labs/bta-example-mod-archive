@@ -9,9 +9,20 @@ public interface ExampleAccessor {
 
     // Accessors are used to get or set fields which have protected or private access
 
-    // Static fields have to throw an AssertionError like this
+    // Static fields have to throw an AssertionError
     @Accessor("theMinecraft")
     static Minecraft getTheMinecraft() {
         throw new AssertionError();
     }
+
+    // Non-static fields are set like this:
+    //
+    //      @Accessor("field")
+    //      void setField(type x); // type must be the same as the field's type
+    //
+    // And get like this:
+    //
+    //      @Accessor("field")
+    //      type getField();
+    //
 }
