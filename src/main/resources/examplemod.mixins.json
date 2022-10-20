@@ -5,19 +5,18 @@
     "compatibilityLevel": "JAVA_8",
     "mixins": [
         "BlockFluidStillMixin",
-        "worldgen.ChunkProviderRetroMixin",
         "DimensionInterface",
         "EntityLivingMixin",
         "ExampleAccessor",
         "ExampleInvoker",
         "ExampleMixin",
-        "RenderPlayerInterface",
-        "RenderPlayerMixin",
+        "MinecraftServerMixin",
         "entity.EntityListInterface",
         "entity.RenderManagerInterface",
         "recipe.CraftingManagerInterface",
         "recipe.RecipesBlastFurnaceInterface",
-        "recipe.RecipesFurnaceInterface"
+        "recipe.RecipesFurnaceInterface",
+        "worldgen.ChunkProviderRetroMixin"
     ],
     "client": [
     ],

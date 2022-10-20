@@ -12,6 +12,4 @@ public interface RenderManagerInterface {
     @Accessor("entityRenderMap")
     Map getEntityRenderMap();
 
-    @Accessor("entityRenderMap")
-    void setEntityRenderMap(Map map);
 }

@@ -1,6 +1,6 @@
 package azurelmao.examplemod;
 
-import azurelmao.examplemod.mixin.RenderPlayerInterface;
+import azurelmao.examplemod.mixin.ExampleAccessor;
 import net.minecraft.src.helper.DamageType;
 import net.minecraft.src.material.ArmorMaterial;
 import org.apache.commons.lang3.ArrayUtils;
@@ -17,9 +17,9 @@ public class ArmorHelper {
      * @return the new ArmorMaterial.
      */
     public static ArmorMaterial createArmorMaterial(String textureName, int durability, float combat, float blast, float fire, float fall) {
-        String[] armorFilenamePrefix = RenderPlayerInterface.getArmorFilenamePrefix();
-        ArrayUtils.add(armorFilenamePrefix, textureName);
-        RenderPlayerInterface.setArmorFilenamePrefix(armorFilenamePrefix);
+        String[] armorFilenamePrefix = ExampleAccessor.getArmorFilenamePrefix();
+        armorFilenamePrefix = ArrayUtils.add(armorFilenamePrefix, textureName);
+        ExampleAccessor.setArmorFilenamePrefix(armorFilenamePrefix);
 
         ArmorMaterial armorMaterial = new ArmorMaterial(textureName, armorFilenamePrefix.length - 1, durability);
         ArmorMaterial.setProtectionValuePercent(armorMaterial, DamageType.COMBAT, combat);

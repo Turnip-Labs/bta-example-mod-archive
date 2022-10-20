@@ -1,6 +1,5 @@
 package azurelmao.examplemod.item;
 
-import azurelmao.examplemod.mixin.ExampleAccessor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.src.*;
 
@@ -21,7 +20,7 @@ public class ExampleCustomItem extends Item {
 
     @Override
     public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer entityplayer) {
-        Minecraft mc = ExampleAccessor.getTheMinecraft();
+        Minecraft mc = Minecraft.getMinecraft();
 
         if (mc.objectMouseOver != null && mc.objectMouseOver.entityHit == null) {
             int x = mc.objectMouseOver.blockX;

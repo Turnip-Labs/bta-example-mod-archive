@@ -5,9 +5,12 @@ import azurelmao.examplemod.entity.ExampleEntity;
 import azurelmao.examplemod.item.ExampleCustomItem;
 import azurelmao.examplemod.mixin.ExampleInvoker;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.shared.Minecraft;
 import net.minecraft.src.*;
 import net.minecraft.src.material.ArmorMaterial;
 import net.minecraft.src.material.ToolMaterial;
+import org.lwjgl.Sys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
