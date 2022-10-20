@@ -1,12 +1,13 @@
 package azurelmao.examplemod;
 
 import azurelmao.examplemod.block.ExamplePortalBlock;
-import azurelmao.examplemod.item.ExampleArmorMaterial;
+import azurelmao.examplemod.entity.ExampleEntity;
 import azurelmao.examplemod.item.ExampleCustomItem;
-import azurelmao.examplemod.item.ExampleToolMaterial;
 import azurelmao.examplemod.mixin.ExampleInvoker;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.src.*;
+import net.minecraft.src.material.ArmorMaterial;
+import net.minecraft.src.material.ToolMaterial;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,16 +41,20 @@ public class ExampleMod implements ModInitializer {
         return ExampleMod.MOD_ID + "." + name;
     }
 
+    // Armor/tool materials
+    public static final ArmorMaterial exampleArmorMaterial = ArmorHelper.createArmorMaterial("examplenite", 1000, 0.0f, 200.0f, 0.0f, 200.0f);
+    public static final ToolMaterial exampleToolMaterial = new ToolMaterial().setDurability(16).setEfficiency(10.0f, 100.0f).setMiningLevel(0).setBlockHitDelay(0);
+    
     // Items
     public static final Item exampleItem = new Item(140).setIconCoord(0, 14).setItemName(name("example.item"));
     public static final Item exampleCustomItem = new ExampleCustomItem(141).setIconCoord(1, 14).setItemName(name("example.custom.item"));
     public static final Item exampleFood = new ItemFood(142, 4, false).setIconCoord(2, 14).setItemName(name("food.example.food"));
-    public static final Item exampleTool = new ItemToolShovel(143, ExampleToolMaterial.exampleToolMaterial).setIconCoord(3, 14).setItemName(name("tool.example.tool"));
+    public static final Item exampleTool = new ItemToolShovel(143, exampleToolMaterial).setIconCoord(3, 14).setItemName(name("tool.example.tool"));
 
-    public static final Item exampleHelmet = new ItemArmor(144, ExampleArmorMaterial.exampleArmorMaterial, 0).setIconCoord(4, 14).setItemName(name("armor.example.helmet"));
-    public static final Item exampleChestplate = new ItemArmor(145, ExampleArmorMaterial.exampleArmorMaterial, 1).setIconCoord(5, 14).setItemName(name("armor.example.chestplate"));
-    public static final Item exampleLeggings = new ItemArmor(146, ExampleArmorMaterial.exampleArmorMaterial, 2).setIconCoord(6, 14).setItemName(name("armor.example.leggings"));
-    public static final Item exampleBoots = new ItemArmor(147, ExampleArmorMaterial.exampleArmorMaterial, 3).setIconCoord(7, 14).setItemName(name("armor.example.boots"));
+    public static final Item exampleHelmet = new ItemArmor(144, exampleArmorMaterial, 0).setIconCoord(4, 14).setItemName(name("armor.example.helmet"));
+    public static final Item exampleChestplate = new ItemArmor(145, exampleArmorMaterial, 1).setIconCoord(5, 14).setItemName(name("armor.example.chestplate"));
+    public static final Item exampleLeggings = new ItemArmor(146, exampleArmorMaterial, 2).setIconCoord(6, 14).setItemName(name("armor.example.leggings"));
+    public static final Item exampleBoots = new ItemArmor(147, exampleArmorMaterial, 3).setIconCoord(7, 14).setItemName(name("armor.example.boots"));
 
     // Blocks
     public static final Block exampleBlock = BlockHelper.createBlock(900, name("example.block"), 31, 0, Material.ground, Block.soundSandFootstep, 0.1f, 0.1f, 0.0f);
@@ -77,5 +82,8 @@ public class ExampleMod implements ModInitializer {
 
         RecipeHelper.Smelting.createRecipe(exampleFood, exampleItem);
         RecipeHelper.Blasting.createRecipe(Block.bedrock, Block.blockClay);
+
+        // Entity
+        EntityHelper.createEntity(ExampleEntity.class, new RenderBiped(new ModelZombie(), 0.5f), 60, "Notchbie");
     }
 }

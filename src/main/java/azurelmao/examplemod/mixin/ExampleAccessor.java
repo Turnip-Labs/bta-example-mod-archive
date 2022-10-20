@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 @Mixin(value = Minecraft.class, remap = false)
 public interface ExampleAccessor {
 
-    // Accessors are used to get or set fields which have protected or private access
+    // Accessors are used to get or set fields which have protected or private access or are final
 
     // Static fields have to throw an AssertionError
     @Accessor("theMinecraft")
@@ -25,4 +25,5 @@ public interface ExampleAccessor {
     //      @Accessor("field")
     //      type getField();
     //
+    // Check RenderManagerInterface for a practical example.
 }

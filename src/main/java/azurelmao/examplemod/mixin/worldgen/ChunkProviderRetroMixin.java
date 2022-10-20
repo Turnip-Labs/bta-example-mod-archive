@@ -1,4 +1,4 @@
-package azurelmao.examplemod.mixin;
+package azurelmao.examplemod.mixin.worldgen;
 
 import azurelmao.examplemod.worldgen.GiantBrownMushroom;
 import azurelmao.examplemod.worldgen.GiantRedMushroom;
