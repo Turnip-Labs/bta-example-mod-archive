@@ -1,4 +1,4 @@
-package azurelmao.examplemod.mixin;
+package azurelmao.examplemod.mixin.entity;
 
 import net.minecraft.src.EntityLiving;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,7 +18,7 @@ public class EntityLivingMixin {
 
     @Inject(method = "changeFlySpeed", at = @At(value = "RETURN"))
     private void examplemod_changeFlySpeed(int k, CallbackInfo ci) {
-        if (k > 0 && flySpeed > 0.7f && flySpeed < 0.9f) {
+        if (k > 0 && flySpeed >= 0.7f && flySpeed < 0.9f) {
             flySpeed += 0.02f;
         }
     }

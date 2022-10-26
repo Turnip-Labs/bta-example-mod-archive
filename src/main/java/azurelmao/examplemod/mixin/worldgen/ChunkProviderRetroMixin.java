@@ -1,5 +1,6 @@
 package azurelmao.examplemod.mixin.worldgen;
 
+import azurelmao.examplemod.ExampleMod;
 import azurelmao.examplemod.worldgen.GiantBrownMushroom;
 import azurelmao.examplemod.worldgen.GiantRedMushroom;
 import net.minecraft.src.*;
@@ -23,10 +24,6 @@ public class ChunkProviderRetroMixin {
     @Shadow
     private World worldObj;
 
-    private boolean probability(int percent) {
-        return percent != 0 && rand.nextInt(100) >= 100 - percent;
-    }
-
     @Inject(method = "populate", at = @At(value = "RETURN"))
     private void examplemod_populate(IChunkProvider ichunkprovider, int chunkX, int chunkZ, CallbackInfo ci) {
         // Chunk positions in blocks, at the corner of the chunk
@@ -39,13 +36,18 @@ public class ChunkProviderRetroMixin {
             magicValue = 0;
         }
 
-        // Put the tree declaration here if you want bunching behaviour - trees will generate more or less in groups
+        // Put the tree declaration here if you want bunching behaviour - trees will generate in groups of the same mushroom type
 
         for (int i = 0; i < magicValue; ++i) {
 
+            // 30% chance for the tree to generate
+            if (!ExampleMod.probability(rand, 30)) {
+                continue;
+            }
+
             // 50% chance for the other mushroom to appear
             Object tree = new GiantRedMushroom();
-            if (probability(50)) {
+            if (ExampleMod.probability(rand, 50)) {
                 tree = new GiantBrownMushroom();
             }
 

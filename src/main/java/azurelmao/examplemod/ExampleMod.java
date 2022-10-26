@@ -2,17 +2,17 @@ package azurelmao.examplemod;
 
 import azurelmao.examplemod.block.ExamplePortalBlock;
 import azurelmao.examplemod.entity.ExampleEntity;
+import azurelmao.examplemod.helper.*;
 import azurelmao.examplemod.item.ExampleCustomItem;
 import azurelmao.examplemod.mixin.ExampleInvoker;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.shared.Minecraft;
 import net.minecraft.src.*;
 import net.minecraft.src.material.ArmorMaterial;
 import net.minecraft.src.material.ToolMaterial;
-import org.lwjgl.Sys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Random;
 
 
 public class ExampleMod implements ModInitializer {
@@ -42,6 +42,10 @@ public class ExampleMod implements ModInitializer {
     // Or you can use a helper method:
     public static String name(String name) {
         return ExampleMod.MOD_ID + "." + name;
+    }
+
+    public static boolean probability(Random rand, double percent) {
+        return percent > 0 && rand.nextInt(100) <= percent;
     }
 
     // Armor/tool materials
@@ -87,6 +91,6 @@ public class ExampleMod implements ModInitializer {
         RecipeHelper.Blasting.createRecipe(Block.bedrock, Block.blockClay);
 
         // Entity
-        EntityHelper.createEntity(ExampleEntity.class, new RenderBiped(new ModelZombie(), 0.5f), 60, "Notchbie");
+        EntityHelper.createEntity(ExampleEntity.class, new RenderBiped(new ModelZombie(), 0.5f), 60, "Zotch");
     }
 }

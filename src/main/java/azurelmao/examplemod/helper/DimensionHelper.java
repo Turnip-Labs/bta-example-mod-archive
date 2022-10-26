@@ -1,6 +1,6 @@
-package azurelmao.examplemod;
+package azurelmao.examplemod.helper;
 
-import azurelmao.examplemod.mixin.DimensionInterface;
+import azurelmao.examplemod.mixin.helper.DimensionInterface;
 import net.minecraft.src.Block;
 import net.minecraft.src.Dimension;
 import net.minecraft.src.WorldType;

@@ -8,12 +8,20 @@ public class ExampleEntity extends EntityZombie {
 
     public ExampleEntity(World world) {
         super(world);
-        this.texture = "/mob/notchbie.png";
+        this.texture = "/mob/zotch.png";
     }
 
     @Override
     protected int getDropItemId() {
         return Item.foodAppleGold.itemID;
+    }
+
+    @Override
+    protected void dropFewItems() {
+        int i = this.getDropItemId();
+        if (i > 0) {
+            this.dropItem(i, 1);
+        }
     }
 
 }

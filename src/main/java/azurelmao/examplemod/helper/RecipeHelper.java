@@ -1,8 +1,9 @@
-package azurelmao.examplemod;
+package azurelmao.examplemod.helper;
 
-import azurelmao.examplemod.mixin.recipe.CraftingManagerInterface;
-import azurelmao.examplemod.mixin.recipe.RecipesBlastFurnaceInterface;
-import azurelmao.examplemod.mixin.recipe.RecipesFurnaceInterface;
+import azurelmao.examplemod.ExampleMod;
+import azurelmao.examplemod.mixin.helper.CraftingManagerInterface;
+import azurelmao.examplemod.mixin.helper.RecipesBlastFurnaceInterface;
+import azurelmao.examplemod.mixin.helper.RecipesFurnaceInterface;
 import net.minecraft.src.*;
 
 import java.util.List;

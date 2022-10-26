@@ -1477,4 +1477,8 @@ tile.examplemod.mushroom.cap.brown.desc=A solid block of fungi.
 tile.examplemod.mushroom.stem.name=Mushroom Stem
 tile.examplemod.mushroom.stem.desc=A solid block of fungi.
 
+tile.examplemod.altar.name=Altar
+tile.examplemod.altar.desc=An altar used for occult practices...
+
+
 

@@ -1,7 +1,7 @@
-package azurelmao.examplemod;
+package azurelmao.examplemod.helper;
 
-import azurelmao.examplemod.mixin.entity.EntityListInterface;
-import azurelmao.examplemod.mixin.entity.RenderManagerInterface;
+import azurelmao.examplemod.mixin.helper.EntityListInterface;
+import azurelmao.examplemod.mixin.helper.RenderManagerInterface;
 import net.minecraft.src.*;
 
 import java.util.Map;

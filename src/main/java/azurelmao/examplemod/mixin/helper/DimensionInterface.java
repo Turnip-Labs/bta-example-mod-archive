@@ -1,4 +1,4 @@
-package azurelmao.examplemod.mixin;
+package azurelmao.examplemod.mixin.helper;
 
 import net.minecraft.src.Dimension;
 import org.spongepowered.asm.mixin.Mixin;

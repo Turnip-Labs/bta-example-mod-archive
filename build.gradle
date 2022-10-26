@@ -43,13 +43,17 @@ dependencies {
     modImplementation "org.slf4j:slf4j-api:1.8.0-beta4"
     modImplementation "org.apache.logging.log4j:log4j-slf4j18-impl:2.16.0"
 
-    modImplementation("org.apache.commons:commons-lang3:3.12.0")
-    include("org.apache.commons:commons-lang3:3.12.0")
+    modImplementation "org.apache.commons:commons-lang3:3.12.0"
+    include "org.apache.commons:commons-lang3:3.12.0"
+
+    modImplementation 'com.googlecode.json-simple:json-simple:1.1'
+    include 'com.googlecode.json-simple:json-simple:1.1'
+
 }
 
 java {
-	sourceCompatibility = JavaVersion.VERSION_1_8
-	targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
     withSourcesJar()
 }
 

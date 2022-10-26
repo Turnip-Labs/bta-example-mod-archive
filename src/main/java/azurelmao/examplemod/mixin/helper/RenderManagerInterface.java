@@ -1,4 +1,4 @@
-package azurelmao.examplemod.mixin.entity;
+package azurelmao.examplemod.mixin.helper;
 
 import net.minecraft.src.RenderManager;
 import org.spongepowered.asm.mixin.Mixin;

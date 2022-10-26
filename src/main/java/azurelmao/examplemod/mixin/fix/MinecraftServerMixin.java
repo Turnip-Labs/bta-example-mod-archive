@@ -1,4 +1,4 @@
-package azurelmao.examplemod.mixin;
+package azurelmao.examplemod.mixin.fix;
 
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.src.Dimension;

@@ -1,4 +1,4 @@
-package azurelmao.examplemod.mixin;
+package azurelmao.examplemod.mixin.block;
 
 import azurelmao.examplemod.ExampleMod;
 import net.minecraft.src.Block;
