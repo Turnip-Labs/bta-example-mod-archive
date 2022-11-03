@@ -17,7 +17,7 @@ Future plans include custom worldgen.
 
 1. Download or clone this repository and put it somewhere.
 ```
-git clone https://github.com/azurelmao/bta-babric-example-mod.git
+git clone https://github.com/azurelmao/bta-example-mod.git
 ```
 
 2. Import the project in IntelliJ IDEA, close it and open it again.
