@@ -1,4 +1,4 @@
-package azurelmao.examplemod.block;
+package azurelmao.examplemod;
 
 import net.minecraft.src.BlockPortal;
 import net.minecraft.src.World;

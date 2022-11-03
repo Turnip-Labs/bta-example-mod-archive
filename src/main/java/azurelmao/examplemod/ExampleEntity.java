@@ -1,4 +1,4 @@
-package azurelmao.examplemod.entity;
+package azurelmao.examplemod;
 
 import net.minecraft.src.EntityZombie;
 import net.minecraft.src.Item;

@@ -1,10 +1,7 @@
 package azurelmao.examplemod;
 
-import azurelmao.examplemod.block.ExamplePortalBlock;
-import azurelmao.examplemod.entity.ExampleEntity;
-import azurelmao.examplemod.helper.*;
-import azurelmao.examplemod.item.ExampleCustomItem;
-import azurelmao.examplemod.mixin.ExampleInvoker;
+import azurelmao.halplibe.helper.*;
+import azurelmao.halplibe.mixin.helper.BlockInterface;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.src.*;
 import net.minecraft.src.material.ArmorMaterial;
@@ -70,9 +67,9 @@ public class ExampleMod implements ModInitializer {
     public static final Block mushroomStem = BlockHelper.createBlock(904, name("mushroom.stem"), 31, 4, 31, 4, 31, 3, Material.cloth, Block.soundClothFootstep, 0.1f, 0.1f, 0.0f);
     public static final Block examplePortalBlock = new ExamplePortalBlock(901, 3, Block.glowstone.blockID, Block.fluidWaterStill.blockID).setBlockName("example.portal").setTexCoords(13, 12).setNotInCreativeMenu();
     static {
-        ((ExampleInvoker) examplePortalBlock).callSetHardness(-1.0f);
-        ((ExampleInvoker) examplePortalBlock).callSetStepSound(Block.soundGlassFootstep);
-        ((ExampleInvoker) examplePortalBlock).callSetLightValue(0.75f);
+        ((BlockInterface) examplePortalBlock).callSetHardness(-1.0f);
+        ((BlockInterface) examplePortalBlock).callSetStepSound(Block.soundGlassFootstep);
+        ((BlockInterface) examplePortalBlock).callSetLightValue(0.75f);
     }
 
     // Dimension
@@ -92,5 +89,8 @@ public class ExampleMod implements ModInitializer {
 
         // Entity
         EntityHelper.createEntity(ExampleEntity.class, new RenderBiped(new ModelZombie(), 0.5f), 60, "Zotch");
+
+        // Command
+        CommandHelper.createCommand(new ExampleCommand());
     }
 }

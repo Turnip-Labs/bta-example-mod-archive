@@ -4,20 +4,10 @@
     "package": "azurelmao.examplemod.mixin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
-        "ExampleAccessor",
-        "ExampleInvoker",
         "ExampleMixin",
-        "block.BlockFluidStillMixin",
-        "entity.EntityLivingMixin",
-        "fix.MinecraftServerMixin",
-        "helper.CraftingManagerInterface",
-        "helper.DimensionInterface",
-        "helper.EntityListInterface",
-        "helper.RecipesBlastFurnaceInterface",
-        "helper.RecipesFurnaceInterface",
-        "helper.RenderGlobalMixin",
-        "helper.RenderManagerInterface",
-        "worldgen.ChunkProviderRetroMixin"
+        "BlockFluidStillMixin",
+        "EntityLivingMixin",
+        "ChunkProviderRetroMixin"
     ],
     "client": [
     ],
