@@ -1,4 +1,4 @@
-package azurelmao.examplemod;
+package turniplabs.examplemod;
 
 import net.minecraft.src.EntityPlayer;
 import net.minecraft.src.command.ChatColor;

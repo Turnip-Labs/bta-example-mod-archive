@@ -1,14 +1,11 @@
-package azurelmao.examplemod.mixin;
+package turniplabs.examplemod.mixin;
 
-import azurelmao.examplemod.ExampleMod;
+import turniplabs.examplemod.ExampleMod;
 import net.minecraft.src.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import java.util.Random;
 
 @Mixin(value = GuiMainMenu.class, remap = false)
 public class ExampleMixin {

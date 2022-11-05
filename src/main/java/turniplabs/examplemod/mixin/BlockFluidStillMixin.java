@@ -1,6 +1,6 @@
-package azurelmao.examplemod.mixin;
+package turniplabs.examplemod.mixin;
 
-import azurelmao.examplemod.ExampleMod;
+import turniplabs.examplemod.ExampleMod;
 import net.minecraft.src.Block;
 import net.minecraft.src.BlockFluidStill;
 import net.minecraft.src.BlockPortal;

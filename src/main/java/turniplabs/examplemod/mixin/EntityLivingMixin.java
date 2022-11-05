@@ -1,4 +1,4 @@
-package azurelmao.examplemod.mixin;
+package turniplabs.examplemod.mixin;
 
 import net.minecraft.src.EntityLiving;
 import org.spongepowered.asm.mixin.Mixin;

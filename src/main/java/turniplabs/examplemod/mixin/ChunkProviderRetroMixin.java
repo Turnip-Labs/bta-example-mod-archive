@@ -1,8 +1,8 @@
-package azurelmao.examplemod.mixin;
+package turniplabs.examplemod.mixin;
 
-import azurelmao.examplemod.ExampleMod;
-import azurelmao.examplemod.worldgen.GiantBrownMushroom;
-import azurelmao.examplemod.worldgen.GiantRedMushroom;
+import turniplabs.examplemod.ExampleMod;
+import turniplabs.examplemod.worldgen.GiantBrownMushroom;
+import turniplabs.examplemod.worldgen.GiantRedMushroom;
 import net.minecraft.src.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

@@ -1,4 +1,4 @@
-package azurelmao.examplemod;
+package turniplabs.examplemod;
 
 import azurelmao.halplibe.helper.*;
 import azurelmao.halplibe.mixin.helper.BlockInterface;

@@ -1,6 +1,6 @@
-package azurelmao.examplemod.worldgen;
+package turniplabs.examplemod.worldgen;
 
-import azurelmao.examplemod.ExampleMod;
+import turniplabs.examplemod.ExampleMod;
 import net.minecraft.shared.Minecraft;
 import net.minecraft.src.Block;
 import net.minecraft.src.BlockGrass;
