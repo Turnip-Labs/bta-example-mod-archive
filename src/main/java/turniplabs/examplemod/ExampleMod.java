@@ -1,7 +1,7 @@
 package turniplabs.examplemod;
 
-import azurelmao.halplibe.helper.*;
-import azurelmao.halplibe.mixin.helper.BlockInterface;
+import turniplabs.halplibe.helper.*;
+import turniplabs.halplibe.mixin.helper.BlockInterface;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.src.*;
 import net.minecraft.src.material.ArmorMaterial;
