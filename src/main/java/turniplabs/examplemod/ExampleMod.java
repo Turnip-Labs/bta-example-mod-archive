@@ -92,5 +92,21 @@ public class ExampleMod implements ModInitializer {
 
         // Command
         CommandHelper.createCommand(new ExampleCommand());
+
+        // Textures
+        TextureHelper.addTextureToItems(MOD_ID, "example_item.png", 0, 14);
+        TextureHelper.addTextureToItems(MOD_ID, "example_custom_item.png", 1, 14);
+        TextureHelper.addTextureToItems(MOD_ID, "example_food.png", 2, 14);
+        TextureHelper.addTextureToItems(MOD_ID, "example_tool.png", 3, 14);
+        TextureHelper.addTextureToItems(MOD_ID, "example_helmet.png", 4, 14);
+        TextureHelper.addTextureToItems(MOD_ID, "example_chestplate.png", 5, 14);
+        TextureHelper.addTextureToItems(MOD_ID, "example_leggings.png", 6, 14);
+        TextureHelper.addTextureToItems(MOD_ID, "example_boots.png", 7, 14);
+
+        TextureHelper.addTextureToTerrain(MOD_ID, "example_block.png", 31, 0);
+        TextureHelper.addTextureToTerrain(MOD_ID, "red_mushroom_cap.png", 31, 1);
+        TextureHelper.addTextureToTerrain(MOD_ID, "brown_mushroom_cap.png", 31, 2);
+        TextureHelper.addTextureToTerrain(MOD_ID, "mushroom_stem_side.png", 31, 3);
+        TextureHelper.addTextureToTerrain(MOD_ID, "mushroom_stem.png", 31, 4);
     }
 }
