@@ -13,7 +13,7 @@ Future plans include custom worldgen.
 - IntelliJ IDEA
 - Minecraft Development plugin (Optional, but highly recommended)
 
-## Setup steps
+## Setup instructions
 
 1. Download or clone this repository and put it somewhere.
 ```
