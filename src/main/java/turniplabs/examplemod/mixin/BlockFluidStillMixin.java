@@ -12,6 +12,7 @@ public class BlockFluidStillMixin {
 
     // We don't need an @Inject annotation here because BlockFluidStill does not implement `onBlockAdded()`
     // If you wanted to do the same for BlockFire, you would have to use @Inject
+    // *This is technically an @Overwrite, but I have no idea how you would do it otherwise.
     public void onBlockAdded(World world, int i, int j, int k) {
         if (world.getBlockId(i, j - 1, k) == Block.glowstone.blockID) {
             ((BlockPortal) ExampleMod.examplePortalBlock).tryToCreatePortal(world, i, j, k);

@@ -61,10 +61,10 @@ public class ExampleMod implements ModInitializer {
     public static final Item exampleBoots = new ItemArmor(147, exampleArmorMaterial, 3).setIconCoord(7, 14).setItemName(name("armor.example.boots"));
 
     // Blocks
-    public static final Block exampleBlock = BlockHelper.createBlock(900, name("example.block"), 31, 0, Material.ground, Block.soundSandFootstep, 0.1f, 0.1f, 0.0f);
-    public static final Block redMushroomCap = BlockHelper.createBlock(902, name("mushroom.cap.red"), 31, 1,  Material.cloth, Block.soundClothFootstep, 0.1f, 0.1f, 0.0f);
-    public static final Block brownMushroomCap = BlockHelper.createBlock(903, name("mushroom.cap.brown"), 31, 2,  Material.cloth, Block.soundClothFootstep, 0.1f, 0.1f, 0.0f);
-    public static final Block mushroomStem = BlockHelper.createBlock(904, name("mushroom.stem"), 31, 4, 31, 4, 31, 3, Material.cloth, Block.soundClothFootstep, 0.1f, 0.1f, 0.0f);
+    public static final Block exampleBlock = BlockHelper.createBlock(new Block(900, Material.ground), name("example.block"), 31, 0, Block.soundSandFootstep, 0.1f, 0.1f, 0.0f);
+    public static final Block redMushroomCap = BlockHelper.createBlock(new Block(902, Material.cloth), name("mushroom.cap.red"), 31, 1, Block.soundClothFootstep, 0.1f, 0.1f, 0.0f);
+    public static final Block brownMushroomCap = BlockHelper.createBlock(new Block(903, Material.cloth), name("mushroom.cap.brown"), 31, 2, Block.soundClothFootstep, 0.1f, 0.1f, 0.0f);
+    public static final Block mushroomStem = BlockHelper.createBlock(new Block(904, Material.cloth), name("mushroom.stem"), 31, 4, 31, 4, 31, 3, Block.soundClothFootstep, 0.1f, 0.1f, 0.0f);
     public static final Block examplePortalBlock = new ExamplePortalBlock(901, 3, Block.glowstone.blockID, Block.fluidWaterStill.blockID).setBlockName("example.portal").setTexCoords(13, 12).setNotInCreativeMenu();
     static {
         ((BlockInterface) examplePortalBlock).callSetHardness(-1.0f);
