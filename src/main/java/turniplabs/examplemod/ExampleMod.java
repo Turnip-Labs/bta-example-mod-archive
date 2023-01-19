@@ -1,7 +1,7 @@
 package turniplabs.examplemod;
 
 import turniplabs.halplibe.helper.*;
-import turniplabs.halplibe.mixin.helper.BlockInterface;
+import turniplabs.halplibe.mixin.accessors.BlockAccessor;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.src.*;
 import net.minecraft.src.material.ArmorMaterial;
@@ -27,20 +27,6 @@ public class ExampleMod implements ModInitializer {
     // This makes it easier for other modders to know which mod causes what.
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-    // Use your mod's id in the translation keys to prevent conflicts with other mods.
-    // Example:
-    //
-    //      new Item().setName(ExampleMod.MOD_ID + ".example.item");
-    //
-    // Will result in this in the lang file:
-    //
-    //      "item.examplemod.example.item"
-    //
-    // Or you can use a helper method:
-    public static String name(String name) {
-        return ExampleMod.MOD_ID + "." + name;
-    }
-
     public static boolean probability(Random rand, double percent) {
         return percent > 0 && rand.nextInt(100) <= percent;
     }
@@ -50,26 +36,26 @@ public class ExampleMod implements ModInitializer {
     public static final ToolMaterial exampleToolMaterial = new ToolMaterial().setDurability(16).setEfficiency(10.0f, 100.0f).setMiningLevel(0).setBlockHitDelay(0);
     
     // Items
-    public static final Item exampleItem = new Item(140).setIconCoord(0, 14).setItemName(name("example.item"));
-    public static final Item exampleCustomItem = new ExampleCustomItem(141).setIconCoord(1, 14).setItemName(name("example.custom.item"));
-    public static final Item exampleFood = new ItemFood(142, 4, false).setIconCoord(2, 14).setItemName(name("food.example.food"));
-    public static final Item exampleTool = new ItemToolShovel(143, exampleToolMaterial).setIconCoord(3, 14).setItemName(name("tool.example.tool"));
+    public static final Item exampleItem = ItemHelper.createItem(MOD_ID, new Item(140), "exampleitem", "example_item.png");
+    public static final Item exampleCustomItem = ItemHelper.createItem(MOD_ID, new ExampleCustomItem(141), "customitem", "example_custom_item.png");
+    public static final Item exampleFood = ItemHelper.createItem(MOD_ID, new ItemFood(142, 4, false), "food.example", "example_food.png");
+    public static final Item exampleTool = ItemHelper.createItem(MOD_ID, new ItemToolShovel(143, exampleToolMaterial), "tool.shovel.example", "example_tool.png");
 
-    public static final Item exampleHelmet = new ItemArmor(144, exampleArmorMaterial, 0).setIconCoord(4, 14).setItemName(name("armor.example.helmet"));
-    public static final Item exampleChestplate = new ItemArmor(145, exampleArmorMaterial, 1).setIconCoord(5, 14).setItemName(name("armor.example.chestplate"));
-    public static final Item exampleLeggings = new ItemArmor(146, exampleArmorMaterial, 2).setIconCoord(6, 14).setItemName(name("armor.example.leggings"));
-    public static final Item exampleBoots = new ItemArmor(147, exampleArmorMaterial, 3).setIconCoord(7, 14).setItemName(name("armor.example.boots"));
+    public static final Item exampleHelmet = ItemHelper.createItem(MOD_ID, new ItemArmor(144, exampleArmorMaterial, 0), "armor.helmet.example", "example_helmet.png");
+    public static final Item exampleChestplate = ItemHelper.createItem(MOD_ID, new ItemArmor(145, exampleArmorMaterial, 1), "armor.chestplate.example", "example_chestplate.png");
+    public static final Item exampleLeggings = ItemHelper.createItem(MOD_ID, new ItemArmor(146, exampleArmorMaterial, 2), "armor.leggings.example", "example_leggings.png");
+    public static final Item exampleBoots = ItemHelper.createItem(MOD_ID, new ItemArmor(147, exampleArmorMaterial, 3), "armor.boots.example", "example_boots.png");
 
     // Blocks
-    public static final Block exampleBlock = BlockHelper.createBlock(new Block(900, Material.ground), name("example.block"), 31, 0, Block.soundSandFootstep, 0.1f, 0.1f, 0.0f);
-    public static final Block redMushroomCap = BlockHelper.createBlock(new Block(902, Material.cloth), name("mushroom.cap.red"), 31, 1, Block.soundClothFootstep, 0.1f, 0.1f, 0.0f);
-    public static final Block brownMushroomCap = BlockHelper.createBlock(new Block(903, Material.cloth), name("mushroom.cap.brown"), 31, 2, Block.soundClothFootstep, 0.1f, 0.1f, 0.0f);
-    public static final Block mushroomStem = BlockHelper.createBlock(new Block(904, Material.cloth), name("mushroom.stem"), 31, 4, 31, 4, 31, 3, Block.soundClothFootstep, 0.1f, 0.1f, 0.0f);
-    public static final Block examplePortalBlock = new ExamplePortalBlock(901, 3, Block.glowstone.blockID, Block.fluidWaterStill.blockID).setBlockName("example.portal").setTexCoords(13, 12).setNotInCreativeMenu();
+    public static final Block exampleBlock = BlockHelper.createBlock(MOD_ID, new Block(900, Material.ground), "example", "example_block.png", Block.soundSandFootstep, 0.1f, 0.1f, 0.0f);
+    public static final Block redMushroomCap = BlockHelper.createBlock(MOD_ID, new Block(902, Material.cloth), "mushroom.cap.red", "red_mushroom_cap.png", Block.soundClothFootstep, 0.1f, 0.1f, 0.0f);
+    public static final Block brownMushroomCap = BlockHelper.createBlock(MOD_ID, new Block(903, Material.cloth), "mushroom.cap.brown", "brown_mushroom_cap.png", Block.soundClothFootstep, 0.1f, 0.1f, 0.0f);
+    public static final Block mushroomStem = BlockHelper.createBlock(MOD_ID, new Block(904, Material.cloth), "mushroom.stem", "mushroom_stem.png", "mushroom_stem_side.png", Block.soundClothFootstep, 0.1f, 0.1f, 0.0f);
+    public static final Block examplePortalBlock = new ExamplePortalBlock(901, 3, Block.glowstone.blockID, Block.fluidWaterStill.blockID).setBlockName("portal.example").setTexCoords(13, 12).setNotInCreativeMenu();
     static {
-        ((BlockInterface) examplePortalBlock).callSetHardness(-1.0f);
-        ((BlockInterface) examplePortalBlock).callSetStepSound(Block.soundGlassFootstep);
-        ((BlockInterface) examplePortalBlock).callSetLightValue(0.75f);
+        ((BlockAccessor) examplePortalBlock).callSetHardness(-1.0f);
+        ((BlockAccessor) examplePortalBlock).callSetStepSound(Block.soundGlassFootstep);
+        ((BlockAccessor) examplePortalBlock).callSetLightValue(0.75f);
     }
 
     // Dimension
@@ -92,21 +78,5 @@ public class ExampleMod implements ModInitializer {
 
         // Command
         CommandHelper.createCommand(new ExampleCommand());
-
-        // Textures
-        TextureHelper.addTextureToItems(MOD_ID, "example_item.png", 0, 14);
-        TextureHelper.addTextureToItems(MOD_ID, "example_custom_item.png", 1, 14);
-        TextureHelper.addTextureToItems(MOD_ID, "example_food.png", 2, 14);
-        TextureHelper.addTextureToItems(MOD_ID, "example_tool.png", 3, 14);
-        TextureHelper.addTextureToItems(MOD_ID, "example_helmet.png", 4, 14);
-        TextureHelper.addTextureToItems(MOD_ID, "example_chestplate.png", 5, 14);
-        TextureHelper.addTextureToItems(MOD_ID, "example_leggings.png", 6, 14);
-        TextureHelper.addTextureToItems(MOD_ID, "example_boots.png", 7, 14);
-
-        TextureHelper.addTextureToTerrain(MOD_ID, "example_block.png", 31, 0);
-        TextureHelper.addTextureToTerrain(MOD_ID, "red_mushroom_cap.png", 31, 1);
-        TextureHelper.addTextureToTerrain(MOD_ID, "brown_mushroom_cap.png", 31, 2);
-        TextureHelper.addTextureToTerrain(MOD_ID, "mushroom_stem_side.png", 31, 3);
-        TextureHelper.addTextureToTerrain(MOD_ID, "mushroom_stem.png", 31, 4);
     }
 }

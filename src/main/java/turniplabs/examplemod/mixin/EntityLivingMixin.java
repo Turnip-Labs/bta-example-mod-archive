@@ -16,7 +16,7 @@ public class EntityLivingMixin {
     @Shadow
     protected float flySpeed;
 
-    @Inject(method = "changeFlySpeed", at = @At(value = "RETURN"))
+    @Inject(method = "changeFlySpeed", at = @At(value = "TAIL"))
     private void examplemod_changeFlySpeed(int k, CallbackInfo ci) {
         if (k > 0 && flySpeed >= 0.7f && flySpeed < 0.9f) {
             flySpeed += 0.02f;

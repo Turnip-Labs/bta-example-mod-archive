@@ -1,0 +1,32 @@
+item.examplemod.exampleitem.name=Example Item
+item.examplemod.exampleitem.desc=An example item.
+item.examplemod.customitem.name=Example Custom Item
+item.examplemod.customitem.desc=Use on a block.
+item.examplemod.food.example.name=Example Food
+item.examplemod.food.example.desc=Jesse...
+item.examplemod.tool.shovel.example.name=Example Shovel
+item.examplemod.tool.shovel.example.desc=An example shovel.
+
+item.examplemod.armor.helmet.example.name=Example Helmet
+item.examplemod.armor.helmet.example.desc=An example helmet.
+item.examplemod.armor.chestplate.example.name=Example Chestplate
+item.examplemod.armor.chestplate.example.desc=An example chestplate.
+item.examplemod.armor.leggings.example.name=Example Leggings
+item.examplemod.armor.leggings.example.desc=A pair of example leggings.
+item.examplemod.armor.boots.example.name=Example Boots
+item.examplemod.armor.boots.example.desc=A pair of example boots.
+
+tile.examplemod.example.name=Example Block
+tile.examplemod.example.desc=An example block.
+
+tile.examplemod.portal.example.name=Example Portal
+tile.examplemod.portal.example.desc=An example portal.
+
+dimension.exampleworld.name=the Exampleworld
+
+tile.examplemod.mushroom.cap.red.name=Red Mushroom Cap
+tile.examplemod.mushroom.cap.red.desc=A solid block of fungi.
+tile.examplemod.mushroom.cap.brown.name=Brown Mushroom Cap
+tile.examplemod.mushroom.cap.brown.desc=A solid block of fungi.
+tile.examplemod.mushroom.stem.name=Mushroom Stem
+tile.examplemod.mushroom.stem.desc=A solid block of fungi.

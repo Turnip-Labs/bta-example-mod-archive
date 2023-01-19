@@ -24,7 +24,7 @@ public class ChunkProviderRetroMixin {
     @Shadow
     private World worldObj;
 
-    @Inject(method = "populate", at = @At(value = "RETURN"))
+    @Inject(method = "populate", at = @At(value = "TAIL"))
     private void examplemod_populate(IChunkProvider ichunkprovider, int chunkX, int chunkZ, CallbackInfo ci) {
         // Chunk positions in blocks, at the corner of the chunk
         int preX = chunkX * 16;

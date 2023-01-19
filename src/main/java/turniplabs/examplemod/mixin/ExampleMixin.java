@@ -35,7 +35,7 @@ public class ExampleMixin {
     //          return;
     //      }
     //
-    @Inject(method = "initGui", at = @At(value = "RETURN"))
+    @Inject(method = "initGui", at = @At(value = "TAIL"))
     private void examplemod_otherMethod(CallbackInfo ci) {
         ExampleMod.LOGGER.info("This line is printed after the main menu is initialized.");
     }
